@@ -1,10 +1,10 @@
-=== Epoch - Native WordPress Commenting Perfected ===
+=== Epoch by Postmatic - Native WordPress Commenting Perfected ===
 Contributors: Vernal, Desertsnowman, Shelob9
 Donate link: https://gopostmatic.com
 Tags: ajax comments, comments, lightweight commenting, cdn, cache, engagement, postmatic, live update, wordpress comments, comment template, ajax commenting, better comments, disqus, discussion, seo, mobile commenting, chat, performance, site speed, chatting, email commenting, comment notifications
 Requires at least: 3.9
 Tested up to: 4.2
-Stable tag: 0.0.1
+Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,13 @@ Nope! Epoch is smarter than smart. No need to worry about that.
 2. Screenshot 2 description
 
 == Changelog ==
+
+= 0.2.0 =
+
+- There are still some bugs in the Descending order. It's probably best to stick to Ascending for now.
+- Major improvements to the native comment template functionality. If you want to use Epoch with the comment template that shipped with your theme it may be closer to possible now. Give it a try.
+- Lots of improvements to the light theme. Specifically the comment forms should be more standardized and typography better matching your theme.
+- Added a timestamp along with datestamp
 
 = 0.1.0 =
 Initial Version
