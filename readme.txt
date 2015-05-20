@@ -4,7 +4,7 @@ Donate link: https://gopostmatic.com
 Tags: ajax comments, comments, lightweight commenting, cdn, cache, engagement, postmatic, live update, wordpress comments, comment template, ajax commenting, better comments, disqus, discussion, seo, mobile commenting, chat, performance, site speed, chatting, email commenting, comment notifications
 Requires at least: 3.9
 Tested up to: 4.2
-Stable tag: 0.2.0
+Stable tag: 0.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,11 @@ Nope! Epoch is smarter than smart. No need to worry about that.
 2. Screenshot 2 description
 
 == Changelog ==
+
+= 0.2.1 =
+
+- Fixed up all bugs and descending order as well as duplicating comments
+- Added in some more css to the light theme for increased compatability
 
 = 0.2.0 =
 
