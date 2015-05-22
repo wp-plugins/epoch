@@ -94,7 +94,7 @@ class layout {
 	 * @since 0.0.6
 	 */
 	public static function width_sniffer( $content ) {
-		return $content . sprintf( '<div id="%"></div>', vars::$sniffer );
+		return $content . sprintf( '<div id="%1s"></div>', vars::$sniffer );
 
 	}
 
@@ -122,6 +122,8 @@ class layout {
 			ob_start();
 			comment_form( $args, $post_id );
 			$html = ob_get_clean();
+		} else if ( ! comments_open( $post_id ) ) {
+			$html = __( 'Comments are closed.', 'epoch' );
 		} else {
 			$html = '';
 		}

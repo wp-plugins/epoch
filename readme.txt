@@ -4,13 +4,17 @@ Donate link: https://gopostmatic.com
 Tags: ajax comments, comments, lightweight commenting, cdn, cache, engagement, postmatic, live update, wordpress comments, comment template, ajax commenting, better comments, disqus, discussion, seo, mobile commenting, chat, performance, site speed, chatting, email commenting, comment notifications
 Requires at least: 3.9
 Tested up to: 4.2
-Stable tag: 0.2.1
+Stable tag: 0.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Epoch - 100% realtime chat and commenting in a tiny little package that is fully CDN and cache compatible.
 
 == Description ==
+
+= Heads up! This is early beta software. =
+
+Epoch is in very early-stage beta. Maybe even alpha. It's not production ready (just look at that version number!) unless you are brave, smart, and foolish. Please don't trash our star rating with premature reviews. Download it. Kick the tires. [Help out if you can](https://github.com/postmatic/epoch). Let's perfect commenting together.
 
 Epoch is a new plugin from the creators of [Postmatic](http://gopostmatic.com). The goal: To provide a realtime commenting/chat experience using fully native comments while being compatible with page caching, cdns, mobile, other comment plugins, and seo best practices. A tall order? For sure. Try it out.
 
@@ -76,6 +80,15 @@ Nope! Epoch is smarter than smart. No need to worry about that.
 2. Screenshot 2 description
 
 == Changelog ==
+
+= 0.2.2 =
+
+- Added a notice for when comments are closed
+- Added a header with an overview of the number of comments and anchor to the comment form
+- URLs in comments are now clickable
+- Fixed up an errant div tag
+- More duplicate-comment killing
+- Misc css tweaks to the light theme
 
 = 0.2.1 =
 
