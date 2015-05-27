@@ -5,14 +5,25 @@
 
 #epoch-comments {font-size: 95% !important; line-height: inherit !important; margin-top: 30px !important;}
 
+#epoch-wrap {
+	margin: 0 auto !important;
+}
+
 .epoch-comment-author.vcard {
 }
 
-a.comment-reply-link {
+.comment-count-area a {
+	float: right !important; 
+	display: block !important;
+	font-size: 75% !important;
+	text-decoration: underline !important; 
+}
+
+a.comment-reply-link { 
 	background: none !important;
 	border: none !important;
 	color: gray !important;
-	padding: 0 !important;
+	padding: 0 !important; 
 	font-size: 100% !important; 
 	float: none !important;
 	margin: 0 !important;
@@ -62,6 +73,10 @@ div.epoch-comment-content p {
 	margin-bottom: 10px !important;
 }
 
+div.epoch-comment-content p:last-child {
+	margin-bottom: 0 !important;
+}
+
 article.epoch-comment-body {
 	margin: 0 0 25px 0 !important;
 	border: none !important;
@@ -95,10 +110,10 @@ ul.epoch-comment-actions li a {
  
 div.epoch-single-comment {
    background-color:transparent !important;
-    -moz-transition:background-color 2s !important;
-    -webkit-transition:background-color 2s !important;
-    -o-transition:background-color 2s !important;
-    transition:background-color 2s !important;
+    -moz-transition:background-color 4s !important;
+    -webkit-transition:background-color 4s !important;
+    -o-transition:background-color 4s !important;
+    transition:background-color 4s !important;
 }
 div.epoch-single-comment.epoch-success {
     background-color: #FFFEDB !important;
@@ -160,7 +175,7 @@ div.epoch-single-comment.epoch-success {
 
 #epoch-comments div.comment-respond p.comment-form-comment {
 	clear: left !important;
-	width: 100% !important;
+	width: auto !important;
 	margin: 0 0 0 0 !important;
 	padding: 5px !important;
 }
@@ -196,7 +211,7 @@ div.epoch-single-comment.epoch-success {
 
 /*New top level comment form*/
 
-#epoch-comments-form p.comment-form-author,#epoch-comments-form p.comment-form-email,#epoch-comments-form p.comment-form-url {
+#commentform p.comment-form-author,#commentform p.comment-form-email,#commentform p.comment-form-url {
 	float: left !important;
 	width: 32% !important;
 	margin: 0 1% 15px 0 !important;
@@ -247,4 +262,34 @@ ul.epoch-comment-actions {
 }
 
 
+}
+
+/*wordpress social login*/
+
+.wp-social-login-widget {
+	background: #eee;
+	border: 1px solid #ddd;
+	width: 100%; 
+	padding: 5px 10px !important;
+	margin-bottom: 10px;
+}
+
+.wp-social-login-connect-with {
+	float: left;
+	font-size: 85%;
+	margin-top: 3px;
+	margin-right: 10px;
+}
+
+.wp-social-login-provider-list a {
+	margin-right: 5px;
+}
+
+.wp-social-login-provider-list {
+	padding: 0;
+}
+
+.wp-social-login-provider-list img {
+	width: 20px;
+	height: 20px;
 }
