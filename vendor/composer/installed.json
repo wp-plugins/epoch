@@ -1,0 +1,81 @@
+[
+    {
+        "name": "calderawp/magic-tags",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/CalderaWP/magic-tags.git",
+            "reference": "e822d907419812e67420bf0ae373eda9732be066"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/CalderaWP/magic-tags/zipball/e822d907419812e67420bf0ae373eda9732be066",
+            "reference": "e822d907419812e67420bf0ae373eda9732be066",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2015-04-24 20:19:24",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "calderawp\\filter\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "David Cramer",
+                "homepage": "http://cramer.co.za",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Josh Pollock",
+                "email": "Josh@JoshPress.net",
+                "homepage": "http://joshpress.net",
+                "role": "Developer"
+            }
+        ],
+        "description": "Magic Tag rendering system.",
+        "keywords": [
+            "magic_tags",
+            "wordpress"
+        ]
+    },
+    {
+        "name": "calderawp/dismissible-notice",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/CalderaWP/dismissible_notice.git",
+            "reference": "354340dc25df531ccc4e2db6668ab828c91aa9d2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/CalderaWP/dismissible_notice/zipball/354340dc25df531ccc4e2db6668ab828c91aa9d2",
+            "reference": "354340dc25df531ccc4e2db6668ab828c91aa9d2",
+            "shasum": ""
+        },
+        "time": "2015-05-29 07:57:58",
+        "type": "library",
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL v2+"
+        ],
+        "authors": [
+            {
+                "name": "Josh Pollock",
+                "email": "Josh@JoshPress.net"
+            }
+        ],
+        "description": "Creates a dismissible--via AJAX--admin nag."
+    }
+]
