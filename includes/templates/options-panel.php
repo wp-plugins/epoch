@@ -13,14 +13,14 @@
 	<label for="epoch-options-theme">
 		<?php _e( 'Theme', 'epoch' ); ?>
 	</label>
-	<input id="epoch-options-theme-dark" type="radio" name="options[theme]" value="dark" {{#is options/theme value="dark"}}checked{{/is}}><?php _e( 'Dark (coming soon)', 'epoch' ); ?>
-	<input id="epoch-options-theme-light" type="radio" name="options[theme]" value="light" {{#is options/theme value="light"}}checked{{/is}}><?php _e( 'Light', 'epoch' ); ?>
-	<input id="epoch-options-theme-none" type="radio" name="options[theme]" value="none" {{#is options/theme value="none"}}checked{{/is}}><?php _e( 'None (uses the style that came with your theme - results may vary)', 'epoch' ); ?>
-	<p class="description" style="margin-left: 190px;">
-		<?php _e( 'Epoch comes with a light theme and a dark theme for displaying your comments. Choose whichever works best for your site. The comment template can also be styled easily via css. See the documentation.', 'epoch' ); ?>
+	<input id="epoch-options-theme-light" type="radio" name="options[theme]" value="light" {{#is options/theme value="light"}}checked{{/is}}><?php _e( 'Epoch', 'epoch' ); ?>
+	<input id="epoch-options-theme-none" type="radio" name="options[theme]" value="none" {{#is options/theme value="none"}}checked{{/is}}><?php _e( 'None', 'epoch' ); ?>
+	<p class="description" style="margin-left: 190px;"><strong>Epoch</strong>: Override the comment template which came with your theme while still inheriting typography and colors. The best option if you don't like your current comments template.
+	</p>
+	<p class="description" style="margin-left: 190px;"><strong>None</strong>: Attempt to use the comment style that came with your theme. This approach is highly unstable and depends on the coding practices of your theme developer. Try it. Maybe it'll work! If not, use Epoch.
 	</p>
 	<p class="description" style="margin-left: 190px;">
-		<?php _e( 'Choose "none" to rely only on your theme\'s style or add your own.', 'epoch' ); ?>
+		<?php _e( 'Epoch can integrate with your theme in one of two ways. Give each a try and see what works for you. The comment template can also be styled easily via css. See the documentation.', 'epoch' ); ?>
 	</p>
 </div>
 

@@ -95,6 +95,12 @@ jQuery( document ).ready( function ( $ ) {
                     ).complete( function () {
 
                         } ).success( function ( response ) {
+
+                            if ( !response.success ) {
+                                alert( epoch_translation.comment_rejected );
+                                return false;
+                            }
+
                             $( 'textarea#comment' ).val( '' );
                             $( '#comment_parent' ).val( '0' );
 
@@ -128,15 +134,9 @@ jQuery( document ).ready( function ( $ ) {
                             if ( null == document.getElementById( 'comment-' + comment.comment_ID ) ) {
                                 html = app.parse_comment( comment );
 
-                                if ( 0 == comment.comment_parent && 'DESC' == epoch_vars.epoch_options.order ) {
 
-                                    first_child = app.comments_wrap_el.firstChild;
-                                    new_el = document.createElement( 'div' );
-                                    new_el.innerHTML = html;
-                                    app.comments_wrap_el.insertBefore( new_el, first_child );
-                                } else {
-                                    app.put_comment_in_dom( html, comment.comment_parent, comment.depth );
-                                }
+                                app.put_comment_in_dom( html, comment.comment_parent, comment.depth, id );
+
 
                                 comment_el = document.getElementById( 'comment-' + comment.comment_ID );
                                 if ( null != comment_el ) {
@@ -151,6 +151,9 @@ jQuery( document ).ready( function ( $ ) {
                             app.shut_it_off = false;
 
                         } ).fail( function ( xhr ) {
+                            if ( xhr.responseJSON && xhr.responseJSON.data && xhr.responseJSON.data.message ) {
+                                alert( $( '<div/>' ).html( xhr.responseJSON.data.message ).text() );
+                            }
                             $( app.form_wrap_el, 'textarea#comment' ).addClass( 'epoch-failure' ).delay( 100 ).queue( function ( next ) {
                                 $( this ).removeClass( 'epoch-failure' );
                                 next();
@@ -299,20 +302,17 @@ jQuery( document ).ready( function ( $ ) {
 
                     });
 
-                    if ( 'DESC' == epoch_vars.epoch_options.order ) {
+                    if ( 'ASC' == epoch_vars.epoch_options.order ) {
+                        children.reverse();
                         parents.reverse();
+                    }else{
+                        children.reverse();
                     }
 
                     $.each( parents, function( key, comment ) {
                         html = app.parse_comment( comment );
-                        if ( 'DESC' == epoch_vars.epoch_options.order ) {
-                            first_child = app.comments_wrap_el.firstChild;
-                            new_el = document.createElement( 'div' );
-                            new_el.innerHTML = html;
-                            app.comments_wrap_el.insertBefore( new_el, first_child );
-                        } else {
-                            app.put_comment_in_dom( html, comment.comment_parent, comment.depth );
-                        }
+
+                        app.put_comment_in_dom( html, comment.comment_parent, comment.depth, parseInt( comment.comment_ID, 10 ) );
 
                         if ( is_new ) {
 
@@ -330,7 +330,7 @@ jQuery( document ).ready( function ( $ ) {
 
                     $.each( children, function( key, comment )  {
                         html = app.parse_comment( comment );
-                        app.put_comment_in_dom( html, comment.comment_parent, comment.depth );
+                        app.put_comment_in_dom( html, comment.comment_parent, comment.depth, parseInt( comment.comment_ID, 10 ) );
                     });
 
 
@@ -406,23 +406,34 @@ jQuery( document ).ready( function ( $ ) {
          * @param parent_id ID of parent, or 0 for top level comment.
          * @param level The threading level, not needed for top-level comments.
          */
-        app.put_comment_in_dom = function( html, parent_id, level ) {
-            if ( false == parent_id ) {
-                $( html ).appendTo( app.comments_wrap_el );
-            }else {
-                html = '<div class="epoch-child child-of-' + parent_id +' level-' + level + ' ">' + html + '</div>';
+        app.put_comment_in_dom = function( html, parent_id, level, id ) {
 
-                parent_el = document.getElementById( 'comment-' + parent_id );
-                if ( null != parent_el) {
-                    $( html ).appendTo(parent_el );
-                } else {
+            if ( 0 == comment.comment_parent && 'DESC' == epoch_vars.epoch_options.order ) {
+                first_child = app.comments_wrap_el.firstChild;
+                new_el = document.createElement( 'div' );
+                new_el.innerHTML = html;
+                app.comments_wrap_el.insertBefore( new_el, first_child );
+            } else {
+
+                if ( 0 == parent_id ) {
                     $( html ).appendTo( app.comments_wrap_el );
-                }
+                } else {
+                    html = '<div class="epoch-child child-of-' + parent_id + ' level-' + level + ' ">' + html + '</div>';
 
+                    parent_el = document.getElementById( 'comment-' + parent_id );
+                    if ( null != parent_el ) {
+                        console.log( id );
+                        $( html ).appendTo( parent_el );
+                    } else {
+                        console.log( 'ID-' + id + ' pid-' + parent_id );
+                        $( html ).appendTo( app.comments_wrap_el );
+                    }
+
+                }
             }
 
             $( '.comment-reply-link' ).click( function( event ) {
-                event.preventDefault;
+                event.preventDefault();
             });
         };
 
