@@ -148,13 +148,6 @@ class Tests_The_Magic extends WP_UnitTestCase {
 
 	}
 
-
-	public function test_nothing() {
-		$magic = new \calderawp\filter\magictag();
-
-		$this->assertSame( 'This is a string without tags'		, $magic->do_magic_tag( 'This is a string without tags' ) );
-	}
-
 	public function test_general() {
 		$magic = new \calderawp\filter\magictag();
 
@@ -315,6 +308,23 @@ class Tests_The_Magic extends WP_UnitTestCase {
 		}
 
 		return $id;
+
+	}
+
+	/**
+	 * Test that permalink magic tags work
+	 *
+	 * @since 1.2.0
+	 *
+	 * @covers
+	 */
+	public function test_permalink() {
+		$id = wp_insert_post( array( 'post_title' => 'hats' ) );
+		global $post;
+		$post = get_post( $id );
+		$magic = new \calderawp\filter\magictag();
+		$this->assertSame( esc_url( get_permalink( $id ) ), $magic->do_magic_tag( '{post:post_permalink}' ) );
+		$this->assertSame( esc_url( get_permalink( $id ) ), $magic->do_magic_tag( '{post:permalink}' ) );
 
 	}
 

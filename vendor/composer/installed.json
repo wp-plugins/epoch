@@ -6,18 +6,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/CalderaWP/magic-tags.git",
-            "reference": "e822d907419812e67420bf0ae373eda9732be066"
+            "reference": "98a84b61de00f9bc7355ffa7b629c7d52897dc91"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/CalderaWP/magic-tags/zipball/e822d907419812e67420bf0ae373eda9732be066",
-            "reference": "e822d907419812e67420bf0ae373eda9732be066",
+            "url": "https://api.github.com/repos/CalderaWP/magic-tags/zipball/98a84b61de00f9bc7355ffa7b629c7d52897dc91",
+            "reference": "98a84b61de00f9bc7355ffa7b629c7d52897dc91",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2015-04-24 20:19:24",
+        "time": "2015-06-28 00:29:47",
         "type": "library",
         "installation-source": "source",
         "autoload": {
@@ -55,15 +55,15 @@
         "source": {
             "type": "git",
             "url": "https://github.com/CalderaWP/dismissible_notice.git",
-            "reference": "eede71a3507a2afc43f9d84f7d41e14a5605c943"
+            "reference": "c79d6386a35543f013782261d928ba4c18a53941"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/CalderaWP/dismissible_notice/zipball/eede71a3507a2afc43f9d84f7d41e14a5605c943",
-            "reference": "eede71a3507a2afc43f9d84f7d41e14a5605c943",
+            "url": "https://api.github.com/repos/CalderaWP/dismissible_notice/zipball/c79d6386a35543f013782261d928ba4c18a53941",
+            "reference": "c79d6386a35543f013782261d928ba4c18a53941",
             "shasum": ""
         },
-        "time": "2015-06-08 20:56:07",
+        "time": "2015-06-26 18:26:17",
         "type": "library",
         "installation-source": "source",
         "notification-url": "https://packagist.org/downloads/",
