@@ -54,6 +54,8 @@ class api_helper {
 			$comment = (array) $comment;
 		}
 
+		$max_depth = (int) get_option( 'thread_comments_depth', 5 );
+
 		$date_format = get_option( 'date_format' );
 		$time_format = get_option( 'time_format' );
 		$time = strtotime( $comment['comment_date'] );
@@ -81,6 +83,18 @@ class api_helper {
 		//remove parent_id if $flatten
 		if ( $flatten ) {
 			$comment[ 'comment_parent' ] = "0";
+		}else{
+			$parents = self::find_parents( $comment[ 'comment_ID' ] );
+			if ( empty( $parents ) ) {
+				$comment[ 'depth' ] = 1;
+			}else{
+				$count = count( $parents );
+				if ( $count > $max_depth) {
+					$comment[ 'comment_parent' ] = $parents[ $max_depth - 1 ];
+					$count = $max_depth;
+				}
+				$comment[ 'depth' ] = $count;
+			}
 		}
 
 		//if has no children add that key as false.
@@ -90,15 +104,12 @@ class api_helper {
 
 		$comment['list_class'] = ( $comment['comment_parent'] == '0' ) ? '' : 'children';
 
-		if ( ! isset( $comment[ 'depth' ] ) ) {
-			$comment[ 'depth' ] = 1;
-		}
 
 		if ( ! $flatten ) {
 			//get reply link
 			$reply_link_args = array(
 				'add_below' => 'comment',
-				'max_depth' => get_option( 'thread_comments_depth', 5 ),
+				'max_depth' => $max_depth,
 				'depth'     => (int) $comment['depth']
 			);
 
@@ -225,6 +236,37 @@ class api_helper {
 		if ( get_option( 'thread_comments' ) && 0 != (int) get_option( 'thread_comments_depth' ) ) {
 			return true;
 		}
+
+	}
+
+	/**
+	 * Ensures depth is correct and doesn't exceed max depth. Also resets parent up depth tree if depth does exceed max.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @access protected
+	 *
+	 * @param $comment_id
+	 *
+	 * @return array Contains new depth and parent
+	 */
+	protected static function find_parents( $comment_id ) {
+		$parents = array();
+		$max = get_option( 'thread_comments_depth', 5 );
+		while( $comment_id > 0 ) {
+			$comment = get_comment( $comment_id );
+			$parent = $comment->comment_parent;
+			if ( $parent ) {
+				$parents[] = $comment->comment_parent;
+			}
+			$comment_id = $parent;
+
+
+
+		}
+
+		return $parents;
+
 
 	}
 

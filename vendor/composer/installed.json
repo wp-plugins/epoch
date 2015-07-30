@@ -55,15 +55,15 @@
         "source": {
             "type": "git",
             "url": "https://github.com/CalderaWP/dismissible_notice.git",
-            "reference": "c79d6386a35543f013782261d928ba4c18a53941"
+            "reference": "352cb1732fe82c0befac24b1300400a282e1e197"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/CalderaWP/dismissible_notice/zipball/c79d6386a35543f013782261d928ba4c18a53941",
-            "reference": "c79d6386a35543f013782261d928ba4c18a53941",
+            "url": "https://api.github.com/repos/CalderaWP/dismissible_notice/zipball/352cb1732fe82c0befac24b1300400a282e1e197",
+            "reference": "352cb1732fe82c0befac24b1300400a282e1e197",
             "shasum": ""
         },
-        "time": "2015-06-26 18:26:17",
+        "time": "2015-07-24 05:30:06",
         "type": "library",
         "installation-source": "source",
         "notification-url": "https://packagist.org/downloads/",

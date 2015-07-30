@@ -14,7 +14,8 @@
 <h2>Commenting Perfected<br /><small>A magical accompaniment by Postmatic</small></h2>
 </div>
 
-<h2>What Epoch Does</h2>
+<p style="float:right;"><a href="http://wordpress.org/plugins/postmatic" target="_blank" class="button button-primary button-large">Get Postmatic. It's free!</a></p>
+<h2>What does Epoch do and how does it work?</h2>
 <p>In a nutshell: <strong>Epoch makes commenting fun again.</strong>. <em>Espcially when you combine it with <a href="http://gopostmatic.com">Postmatic</a> (it's free!).</em></p>
 <div class="column">
 <h3>Epoch makes commenting fun again</h3>
@@ -33,7 +34,7 @@
 <div class="column">
 <h3>All with cacheing, CDN's and modern host support</h3>
 <p>Epoch is hands down the fastest commenting system available for WordPress, all the while supporting page cacheing and CDNs. Epoch comments lazy load into a placeholder container only when needed. </p>
-<p>This means your post will load instantly, your comments will load instantly, and your server won't blink. And no, we don't use iframes. Your full SEO mojo is in tact.</p>
+<p>This means your post will load instantly, your comments will load instantly, and your server won't blink. Comments are magically injected into your page so your full SEO mojo stays in tact.</p>
 </div>
 
 
@@ -58,4 +59,4 @@
 <h3 class="clear">Contributors</h3>
 <p>Epoch (we like to pronounce it 'epic') is a collaboration between <a href="http://gopostmatic.com">Postmatic</a> and <a href="http://calderawp.com">CalderaWP</a>. We knew WordPress commenting could be better. Together we made it happen. Need a hand with developing your own dream plugin? Check out <a href="https://calderawp.com/custom-plugin-development/">CalderaWP</a>.</p>
 
-<p>This is just 1.0. We're hoping the WordPress community will lend strength, ideas, and code to this project. That's why we've kept it open-source. You can find Epoch on Github and jump right in. We can't wait to see where commenting goes next.</p>
+<p>This is just 1.0. We're hoping the WordPress community will lend strength, ideas, and code to this project. That's why we've kept it open-source. You can find <a href="http://github.com/postmatic/epoch" target="_blank">Epoch on Github</a> and jump right in. We can't wait to see where commenting goes next.</p>
