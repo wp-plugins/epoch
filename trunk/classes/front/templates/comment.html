@@ -1,0 +1,43 @@
+<script id="epoch-comment-template" type="text/x-handlebars-template">
+
+    <div id="comment-{{comment_ID}}" class="epoch-single-comment" data-comment-id="{{comment_ID}}">
+        <article id="div-comment-{{comment_ID}}" class="epoch-comment-body">
+            <footer class="epoch-comment-meta">
+                <div class="epoch-comment-author">
+                    <div class="epoch-comment-author-avatar">
+                        {{#if comment_author_url}}
+                            {{epochLink comment_author_url author_avatar 'author_url_link_title' 'epoch-author-avatar' '_blank' 'nofollow'}}
+                        {{else}}
+                            {{{author_avatar}}}
+                        {{/if}}
+                    </div>
+                       {{#if comment_author_url}}
+                            {{epochLink comment_author_url comment_author 'author_url_link_title' 'epoch-author-link' '_blank' 'nofollow'}}
+                       {{else}}
+                            {{comment_author}}
+                        {{/if}}
+                      <span class="epoch-divide">&#183;</span>
+                      {{epochLink comment_link '<time datetime="comment_date">-comment_date-</time>' 'comment_link_title' 'epoch-comment-link'}}
+                </div><!-- .comment-author -->
+
+                {{#unless comment_approved}}
+                    <p class="epoch-comment-awaiting-moderation">{{epochTranslation 'awaiting_moderation'}}</p>
+                {{/unless}}
+            </footer><!-- .comment-meta -->
+
+            <div class="epoch-comment-content">
+                {{{comment_content}}}
+            </div><!-- .comment-content -->
+
+            <ul class="epoch-comment-actions">
+                {{#if reply_allowed}}
+                    <li class="epoch-reply" data-comment-id="{{comment_ID}}">
+                        {{{reply_link}}}
+                    </li>
+                {{/if}}
+            </ul>
+
+        </article><!-- .comment-body -->
+    </div>
+
+</script>

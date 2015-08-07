@@ -1,0 +1,43 @@
+<script id="epoch-comment-template" type="text/x-handlebars-template">
+<ol class="comment-list commentlist {{list_class}}">
+    <li id="comment-{{comment_ID}}" class="comment" data-comment-id="{{comment_ID}}">
+        <article id="div-comment-{{comment_ID}}" class="comment-body">
+            <footer class="comment-meta">
+                <div class="comment-author vcard">
+                    <a href="{{comment_author_url}}" target="_blank" rel="nofollow">
+                        {{{author_avatar}}}
+                    </a>
+                    {{#if comment_author_url}}
+                        {{epochLink comment_author_url comment_author 'author_url_link_title' 'epoch-author-link' '_blank' 'nofollow'}}
+                    {{else}}
+                        {{comment_author}}
+                    {{/if}}
+                </div><!-- .comment-author -->
+
+                <div class="comment-metadata">
+                    <a href="#comment-link">
+                        <time datetime="{{comment_date}}">
+                            {{comment_date}}
+                        </time>
+                    </a>
+                </div><!-- .comment-metadata -->
+
+                {{#unless comment_approved}}
+                    <p class="comment-awaiting-moderation">{{epochTranslation 'awaiting_moderation'}}</p>
+                {{/unless}}
+            </footer><!-- .comment-meta -->
+
+            <div class="comment-content">
+                {{{comment_content}}}
+            </div><!-- .comment-content -->
+
+                {{#if reply_allowed}}
+                    <div class="reply" data-comment-id="{{comment_ID}}">
+                        {{{reply_link}}}
+                    </div>
+                {{/if}}
+
+        </article><!-- .comment-body -->
+    </li>
+</ol>
+</script>
